@@ -1,11 +1,9 @@
-.container mt-5{
-    display: inline-block;
-}
+.text-center.mb-5 {
+    margin: 70px; /* ajusta el valor de acuerdo a tus necesidades */
+  }
 
-.card{
-    display: inline-block;
-}
-
-.card-budy{
-    display: inline-block;
+.card .card-img-top{
+  width: 355px;
+  height: 200px;
+    
 }

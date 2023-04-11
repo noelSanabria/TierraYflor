@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 
+
 html {
   height: 100%;
   overflow: hidden;
@@ -93,7 +94,7 @@ img:last-of-type {
 }
 
 #title {
-  background-image: url("https://picsum.photos/640/480");
+  background-image: url("https://www.elmueble.com/medio/2019/02/25/00427667_20133c54_1280x650.jpg");
   z-index:2;
 }
 
@@ -104,7 +105,7 @@ img:last-of-type {
 }
 
 #slide1:before {
-  background-image: url("https://picsum.photos/960/520");
+  background-image: url("https://cdn0.matrimonios.cl/vendor/0376/3_2/640/jpg/12341624-852818301505120-3462778502341300526-n_8_120376.webp");
   transform: translateZ(-1px) scale(2);
 }
 
@@ -114,10 +115,7 @@ img:last-of-type {
 }
 
 #slide3:before {
-  background-image: url("https://picsum.photos/980/600");
+  background-image:url("https://www.portalagrochile.cl/wp-content/uploads/2022/07/Concurso-nacional-CNR-Pequenos-productores-de-Nuble-y-Biobio-podran-presentar-proyectos-de-riego-intrapredial-entre-UF-400-y-UF-1.000.jpg");
   transform: translateZ(-1px) scale(2);
 }
 
-#slide4 {
-  background: #222;
-}
