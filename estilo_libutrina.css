@@ -1,20 +1,13 @@
-.text-center.mb-5 {
-    margin: 70px; /* ajusta el valor de acuerdo a tus necesidades */
-  }
-
-.card .card-img-top{
-  width: 355px;
-  height: 200px;
-    
+.col-md-6 .producto{
+    margin-top: 80px;
+    margin-left: 60px;
 }
 
-.price {
-    font-size: 1.2em;
-    
-   
-  color:black;
-    
-   
-  font-weight: bold;
-  }
-  
+.img-fluid{
+    margin: 80px;
+    margin-left: 0%;
+    display: flex;
+    width: 400px;
+   height: 500px;
+   border-radius: 20%;
+}
