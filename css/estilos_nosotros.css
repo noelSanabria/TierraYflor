@@ -1,52 +1,43 @@
-/* Estilos para la sección banner */
-.banner {
-    background-color: #f9f9f9;
-    padding: 100px 0;
-  }
-  
-  .banner h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  .banner p {
-    font-size: 20px;
-    line-height: 1.5;
-    margin-bottom: 30px;
-  }
-  
-  .banner .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-  }
-  
-  .banner .btn-primary:hover {
-    background-color: #0069d9;
-    border-color: #0062cc;
-  }
-  
-  /* Estilos para la sección productos-destacados */
-  .productos-destacados h2 {
-    font-size: 30px;
-    margin-bottom: 30px;
-  }
-  
-  .productos-destacados .card {
-    border: none;
-    margin-bottom: 30px;
-  }
-  
-  .productos-destacados .card img {
-    height: 250px;
-  }
-  
-  .productos-destacados .card-body h5 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .productos-destacados .card-body p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 10px;
-  }
+body { 
+  margin:0;
+  padding:0;
+	perspective: 1px;
+	transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: Nunito;
+}
+
+.slide {
+  position: relative;
+  padding: 25vh 10%;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+	transform-style: inherit;
+}
+
+.slide:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, .7);
+}
+
+.title {
+  width: 90%;
+  padding: 5%;
+  border-radius:2px;
+  background: rgba(240,230,220, .7);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+}
+
+#slide1:before {
+  background-image: url("https://cdn0.matrimonios.cl/vendor/0376/3_2/640/jpg/12341624-852818301505120-3462778502341300526-n_8_120376.webp");
+  transform: translateZ(-1px) scale(2);
+}
