@@ -4,6 +4,7 @@
 }
 
 .cart-container {
+    margin-top: 60px;
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 20px;
@@ -12,7 +13,7 @@
   .cart-items {
     
    
-  list-style: none;
+  list-style: none;  
     margin: 0;
     padding: 0;
   }
@@ -33,7 +34,6 @@
   }
   
   .cart-total {
-    
    
   display: flex;
     
@@ -47,6 +47,7 @@
    
   border: 1px solid #ccc;
     padding: 10px;
+ 
   }
   
   .product-items {
