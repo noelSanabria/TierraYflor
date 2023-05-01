@@ -1,3 +1,8 @@
+.body-container{
+  margin-top: 50px;
+
+}
+
 .cart-container {
     margin-top: 60px;
     border: 1px solid #ccc;
@@ -54,12 +59,15 @@
   }
   
   .product-items li {
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
   }
   
   .product-items img {
+    top: 140px;
+    width: 100px;
     height: 50px;
     margin-right: 10px;
   }
