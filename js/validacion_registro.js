@@ -1,49 +1,48 @@
-$(document).ready(function(){
-    $("#form").submit(function(e){
-        e.preventDefault();
-        var nombre = $("#name").val();
-        var correo = $("#email").val();
-        var clave = $("#password").val();
+var nombre = document.getElementById("name"); 
+var correo = document.getElementById("email");
+var clave = document.getElementById("password");
 
-        var msj = "";
-        let enviar = false;
+const formulario = document.getElementById("form");
 
-        if(nombre.trim().length < 4 || nombre.trim().length > 10){
-            msj += "El nombre debe tener entre 4 y 10 caracteres";
-            enviar = true;
-        }
+var mensaje = document.getElementById("warnings");
 
-        var letra = nombre.charAt(0);
-        if(!esMayscula(letra)){
-            msj += "<br>Debe comenzar con mayúscula";
-            enviar = true;
-        }
+formulario.addEventListener('submit', e =>{
+    e.preventDefault();
+    let msj = "";
+    let enviar = false;
 
-        if(nombre == "Victor"){
-            msj += "El nombre no puede ser Victor";
-            enviar = true;
-        }
+    if(nombre.value.length < 4 || nombre.value.length > 10){
+        msj = msj + "El nombre debe estar entre 4 y 10 caracteres";
+        enviar = true;
 
-        if(enviar){
-            $("#warnings").html(msj);
-        }
-        else{
-            $("#warnings").html("Enviado");
-        }
-
-
-
-
-    });
-
-
-    function esMayscula(letra){
-        if(letra === letra.toUpperCase()){
-            return true;
-        }
-        else{
-            return false;
-        }
     }
 
+    var letra = nombre.value.charAt(0);
+    console.log(letra);
+    if(!esMayscula(letra)){
+        msj += "<br>La primera letra debe ser mayúscula";
+        enviar = true;
+    }
+
+    if(nombre.value == "Victor"){
+        msj += "<br>El nombre no debe ser Victor";
+        enviar = true;
+    }
+
+    if(enviar){
+        mensaje.innerHTML = msj;
+    }
+    else{
+        mensaje.innerHTML = "Enviado";
+    }
 });
+
+
+function esMayscula(letra){
+    if(letra === letra.toUpperCase()){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
