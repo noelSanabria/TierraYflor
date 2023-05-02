@@ -1,64 +1,49 @@
-var nombre = document.getElementById("name"); 
-var apellido = document.getElementById("lastname"); 
-var correo = document.getElementById("email");
-var clave = document.getElementById("password");
+$(document).ready(function(){
+    $("#form").submit(function(e){
+        e.preventDefault();
+        var nombre = $("#name").val();
+        var correo = $("#email").val();
+        var clave = $("#password").val();
 
-const formulario = document.getElementById("form");
+        var msj = "";
+        let enviar = false;
 
-var mensaje = document.getElementById("warnings");
+        if(nombre.trim().length < 4 || nombre.trim().length > 10){
+            msj += "El nombre debe tener entre 4 y 10 caracteres";
+            enviar = true;
+        }
 
-formulario.addEventListener('submit', e =>{
-    e.preventDefault();
-    let msj = "";
-    let enviar = false;
+        var letra = nombre.charAt(0);
+        if(!esMayscula(letra)){
+            msj += "<br>Debe comenzar con mayúscula";
+            enviar = true;
+        }
 
-    if(nombre.value.length < 3 || nombre.value.length > 10){
-        msj = msj + "El nombre debe estar entre 3 y 10 caracteres";
-        enviar = true;
+        if(nombre == "Victor"){
+            msj += "El nombre no puede ser Victor";
+            enviar = true;
+        }
 
-    }
+        if(enviar){
+            $("#warnings").html(msj);
+        }
+        else{
+            $("#warnings").html("Enviado");
+        }
 
-    var letra = nombre.value.charAt(0);
-    console.log(letra);
-    if(!esMayscula(letra)){
-        msj += "<br>La primera letra debe ser mayúscula";
-        enviar = true;
-    }
 
-    if(apellido.value.length < 3 || nombre.value.length > 10){
-        msj = msj + "El nombre debe estar entre 3 y 10 caracteres";
-        enviar = true;
 
-    }
 
-    var letra = apellido.value.charAt(0);
-    console.log(letra);
-    if(!esMayscula(letra)){
-        msj += "<br>La primera letra debe ser mayúscula";
-        enviar = true;
-    }
+    });
 
-    if(clave.value.length < 3 || clave.value.length > 10){
-        msj = msj + "la contraseña debe tener entre 3 y 10 caracteres";
-        enviar = true;
 
-    }
-
-    var letra = clave.value.charAt(0);
-    console.log(letra);
-    if(!esMayscula(letra)){
-        msj += "<br>La contraseña dete tener al menos una mayúscula";
-        enviar = true;
+    function esMayscula(letra){
+        if(letra === letra.toUpperCase()){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
 });
-
-
-function esMayscula(letra){
-    if(letra === letra.toUpperCase()){
-        return true;
-    }
-    else{
-        return false;
-    }
-}

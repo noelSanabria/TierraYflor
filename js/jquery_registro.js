@@ -1,17 +1,53 @@
+$("#registro").validate({
+    reules:{
+        nombre: {
+            required: true,
+            minlength:3,
+            maxlength:200
+        
+    },
+    
+    apellido: {
+        required: true,
+        minlength:3,
+        maxlength:200
+    },
+
+    email: {
+        required: true,
+        email: true
+    },
+
+    usuario: {
+        required: true,
+        minlength:3,
+        maxlength:200
+    },
+
+    contraseña: {
+        required: true,
+        minlength:3,
+        maxlength:200,
+        equalto: "contraseña",
+    },
+
+}
+
+$("#registrar").click(function() {}
+
+
 $(document).ready(function(){
     $("#form").submit(function(e){
         e.preventDefault();
-        var nombre = $("#nombre").val();
-        var apellido = $("#apellido").val();
+        var nombre = $("#name").val();
         var correo = $("#email").val();
-        var contraseña = $("#contraseña").val();
-        var contraseña = $("#password").val();
+        var clave = $("#password").val();
 
         var msj = "";
         let enviar = false;
 
-        if(nombre.trim().length < 3 || nombre.trim().length > 10){
-            msj += "El nombre debe estar entre 3 y 10 caracteres";
+        if(nombre.trim().length < 4 || nombre.trim().length > 10){
+            msj += "El nombre debe tener entre 4 y 10 caracteres";
             enviar = true;
         }
 
@@ -21,17 +57,17 @@ $(document).ready(function(){
             enviar = true;
         }
 
-        if(apellido.trim().length < 3 || apellido.trim().length > 10){
-            msj += "El nombre debe estar entre 3 y 10 caracteres";
+        if(nombre == "Victor"){
+            msj += "El nombre no puede ser Victor";
             enviar = true;
         }
 
-        var letra = apellido.charAt(0);
-        if(!esMayscula(letra)){
-            msj += "<br>Debe comenzar con mayúscula";
-            enviar = true;
+        if(enviar){
+            $("#warnings").html(msj);
         }
-
+        else{
+            $("#warnings").html("Enviado");
+        }
 
 
 
